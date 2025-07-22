@@ -3,7 +3,7 @@
 import pandas as pd
 import numpy as np
 
-def load_and_prepare_data(file_path='data/StudentsPerformance.csv', seed=42):
+def load_and_prepare_data(file_path=r"C:\Users\ISHA\OneDrive\Documents\GitHub\Student-Exam-Score-Prediction\data\StudentsPerformance.csv", seed=42):
     # Load dataset
     df = pd.read_csv(file_path)
     
