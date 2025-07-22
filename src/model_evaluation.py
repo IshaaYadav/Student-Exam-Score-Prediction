@@ -40,20 +40,4 @@ def evaluate_model(model_path='models/student_score_model.pkl', df=None):
     plt.savefig('outputs/figures/residuals_distribution.png')
     plt.close()
 
-    # Feature Importances (tree models only)
-    if hasattr(model, 'feature_importances_'):
-        importances = model.feature_importances_
-        feature_names = X.columns
-        imp_df = pd.DataFrame({'Feature': feature_names, 'Importance': importances})
-        imp_df = imp_df.sort_values(by='Importance', ascending=True)
-
-        plt.figure(figsize=(7,5))
-        sns.barplot(x='Importance', y='Feature', data=imp_df, palette='viridis')
-        plt.title("Feature Importances")
-        plt.xlabel("Importance")
-        plt.ylabel("Feature")
-        plt.tight_layout()
-        plt.savefig('outputs/figures/feature_importance.png')
-        plt.close()
-
     return rmse, r2

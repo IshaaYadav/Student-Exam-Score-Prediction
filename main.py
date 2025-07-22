@@ -7,7 +7,7 @@ from src.model_evaluation import evaluate_model
 def main():
     print("🔄 Loading and preparing data...")
     df = load_and_prepare_data()
-    print("✅ Data loaded and enhanced with new features.")
+    print("✅ Data loaded")
     print("\n📄 Sample Data:")
     print(df.head())
 
@@ -23,8 +23,7 @@ def main():
     print(f"📉 RMSE: {rmse:.2f}")
     print(f"📈 R² Score: {r2:.2f}")
 
-    print("\n🎉 All done! You're ready to launch the Streamlit app.")
-    print("👉 Run it using: streamlit run streamlit_app/app.py")
+    print("👉 ready to run ")
 
 if __name__ == "__main__":
     main()

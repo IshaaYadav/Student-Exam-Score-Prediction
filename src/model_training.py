@@ -53,14 +53,6 @@ def train_and_select_model(df, random_state=42):
     os.makedirs('models', exist_ok=True)
     
     dump(best_model, 'models/student_score_model.pkl')
-    import pickle
-import os
-
-def save_model(model):
-    """Save trained model to the models directory"""
-    os.makedirs("models", exist_ok=True)
-    with open("models/student_score_model.pkl", "wb") as f:
-        pickle.dump(model, f)
-
+    
 
     return results_df, best_model_name

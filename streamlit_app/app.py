@@ -11,13 +11,13 @@ warnings.filterwarnings('ignore')
 
 # Page configuration
 st.set_page_config(
-    page_title="🎓 Student Score Predictor", 
+    page_title="Student Score Predictor", 
     page_icon="🎓",
     layout="wide",
     initial_sidebar_state="expanded"
 )
 
-# Custom CSS for attractive styling
+# Custom CSS
 st.markdown("""
 <style>
     .main-title {
@@ -91,7 +91,7 @@ st.markdown("""
 
 @st.cache_data
 def load_model():
-    """Load the trained model using joblib and os"""
+    """Load the trained model"""
     model_path = os.path.join("models", "student_score_model.pkl")
     if os.path.exists(model_path):
         try:
@@ -105,7 +105,7 @@ def load_model():
 
 @st.cache_data
 def load_data():
-    """Load actual data using os"""
+    """Load actual"""
     data_path = os.path.join("data", "StudentsPerformance.csv")
     if os.path.exists(data_path):
         try:
@@ -125,7 +125,7 @@ def load_data():
         return None
 
 def predict_score(model, hours, prev_score, attendance):
-    """Make prediction with fallback - ORIGINAL PREDICTION LOGIC"""
+    """Make prediction"""
     if model:
         try:
             input_data = pd.DataFrame({
@@ -137,12 +137,12 @@ def predict_score(model, hours, prev_score, attendance):
         except:
             pass
     
-    # Fallback prediction formula - ORIGINAL FORMULA
+    # prediction formula
     score = (0.4 * hours * 4 + 0.35 * prev_score + 0.25 * attendance + np.random.normal(0, 3))
     return max(0, min(100, score))
 
 def get_risk_level_and_insights(score, hours, prev_score, attendance):
-    """Determine risk level and provide detailed insights - ORIGINAL LOGIC"""
+    """Determine risk level"""
     if score < 50:
         risk_level = "high-risk"
         risk_text = "🚨 HIGH RISK - Immediate Support Needed"
@@ -174,7 +174,7 @@ def get_risk_level_and_insights(score, hours, prev_score, attendance):
             "🏆 Set goals for even higher achievement"
         ]
     
-    # Additional specific insights - ORIGINAL INSIGHTS
+    # Additional specific insights
     insights = []
     if hours < 5:
         insights.append("⏰ Study time is below optimal range. Research shows 6-8 hours/week is ideal.")
@@ -188,7 +188,7 @@ def get_risk_level_and_insights(score, hours, prev_score, attendance):
     return risk_level, risk_text, recommendations, insights
 
 def create_gauge_chart(score):
-    """Create an attractive gauge chart for the score"""
+    """gauge chart for the score"""
     fig = go.Figure(go.Indicator(
         mode = "gauge+number+delta",
         value = score,
@@ -218,7 +218,7 @@ def create_gauge_chart(score):
     return fig
 
 def create_feature_impact_chart():
-    """Create feature importance visualization - ORIGINAL FEATURES"""
+    """feature importance visualization"""
     features = ['Study Hours', 'Previous Scores', 'Attendance']
     importance = [40, 35, 25]
     colors = ['#1e3a8a', '#3b82f6', '#60a5fa']
@@ -235,7 +235,7 @@ def create_feature_impact_chart():
     return fig
 
 def create_score_distribution(data):
-    """Create score distribution charts"""
+    """score distribution charts"""
     if data is None:
         fig = go.Figure()
         fig.add_annotation(text="No data available", x=0.5, y=0.5, showarrow=False)
@@ -277,7 +277,7 @@ def create_score_distribution(data):
     return fig
 
 def create_demographic_analysis(data):
-    """Create demographic analysis charts"""
+    """demographic analysis charts"""
     if data is None:
         fig = go.Figure()
         fig.add_annotation(text="No data available", x=0.5, y=0.5, showarrow=False)
@@ -376,7 +376,7 @@ def main():
     st.sidebar.markdown("---")
     
     # Prediction section - BACK TO ORIGINAL LOGIC
-    if st.sidebar.button("🔮 Analyze Student Performance", type="primary", use_container_width=True):
+    if st.sidebar.button("Predict", type="primary", use_container_width=True):
         with st.spinner("Analyzing student data..."):
             # Make prediction using ORIGINAL inputs
             predicted_score = predict_score(model, hours, prev_score, attendance)
@@ -531,8 +531,7 @@ def main():
     st.markdown("""
     <div style='text-align: center; padding: 20px; background: linear-gradient(90deg, #667eea 0%, #764ba2 100%); 
                 color: white; border-radius: 10px; margin: 20px 0;'>
-        <h4>🎓 Supporting Student Success Through Data-Driven Insights</h4>
-        <p>Empowering educators to identify at-risk students early and provide targeted interventions</p>
+        <h4>Made by Isha Yadav as part of Celebal Internship Project</h4>  
     </div>
     """, unsafe_allow_html=True)
 
