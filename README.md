@@ -1,6 +1,34 @@
 # Student-Exam-Score-Prediction
-This project predicts students' exam scores based on key academic performance indicators: hours studied, previous scores, and attendance. The aim is to provide actionable insights that can help identify students who may require additional academic support, while also understanding how different factors impact performance.
+This Streamlit web app predicts students' exam scores using features like:
+- Hours Studied
+- Previous Exam Scores
+- Attendance Percentage
 
+☁️ Live App
+[![View in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://student-exam-score-prediction-ishayadav.streamlit.app/)
+
+---
+
+## 📸 App Demo
+
+![App Demo](demo.gif)
+
+---
+
+## 🚀 Features
+- **Interactive Score Prediction** with real-time user input
+- **Insightful Recommendations** based on predicted performance
+- Clean, colorful and responsive **Streamlit UI**
+- Deployed via **Streamlit Cloud**
+
+---
+
+## 🔍 Tech Stack
+
+- **Frontend**: Streamlit
+- **Backend/Modeling**: Scikit-learn, Pandas, NumPy
+- **Deployment**: Streamlit Cloud
+- **Dataset**: Student Performance Data (Kaggle)
 
 ---
 
@@ -22,6 +50,8 @@ Student-Exam-Score-Prediction<br>
 │   └── model_evaluation.py<br>
 ├── streamlit_app<br>
 │   └── app.py   # Streamlit web application<br>
+├── requirements.txt<br>
+├── demo.gif<br>
 ├── main.py     # Central runner <br>
 ├── LICENSE<br>
 └── README.md<br>
@@ -29,7 +59,7 @@ Student-Exam-Score-Prediction<br>
 ---
 
 🧠 Dataset
-Source: Kaggle - Students Performance in Exams [](https://www.kaggle.com/datasets/spscientist/students-performance-in-exams)
+Source: Kaggle - Students Performance in Exams [!](https://www.kaggle.com/datasets/spscientist/students-performance-in-exams)
 
 Selected Features:
 
@@ -78,14 +108,7 @@ Poor attendance (below threshold)
 Attendance and consistent academic performance are critical success indicators.
 Predictive models enable early identification of at-risk students.
 The project supports data-driven decision making in academic settings.
-
-📷 Output Visuals
-<img width="1920" height="1008" alt="Screenshot 2025-07-22 223720" src="https://github.com/user-attachments/assets/34fa3966-db0e-4c80-8b17-4eaa76346d0d" />
-<img width="1920" height="1008" alt="image" src="https://github.com/user-attachments/assets/a1ba3e6b-8279-4fb7-9fce-d9bf44517ff3" />
-<img width="1920" height="1008" alt="image" src="https://github.com/user-attachments/assets/b5770f58-eadc-462d-977e-879eb9dff5ef" />
-<img width="1920" height="1008" alt="image" src="https://github.com/user-attachments/assets/ea6deffa-7a77-4e94-a3bc-ef828eee9ad0" />
-
-
+ 
 📄 License
 This project is licensed under the MIT License.
 
