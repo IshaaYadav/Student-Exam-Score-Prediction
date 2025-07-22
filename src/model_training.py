@@ -1,5 +1,5 @@
 # src/model_training.py
-
+import os 
 import pandas as pd
 import numpy as np
 from sklearn.model_selection import train_test_split, cross_val_score
@@ -48,7 +48,10 @@ def train_and_select_model(df, random_state=42):
     best_model_name = results_df.iloc[0]['Model']
     best_model = models[best_model_name]
     best_model.fit(X, y)
+
+    # ✅ FIX: Ensure models directory exists
+    os.makedirs('models', exist_ok=True)
     
     dump(best_model, 'models/student_score_model.pkl')
-    
+
     return results_df, best_model_name
