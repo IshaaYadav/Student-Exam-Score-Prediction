@@ -41,7 +41,7 @@ Attendance: Engagement and classroom presence
 
 ❗ Features like gender, race/ethnicity, lunch type, and parental education level were excluded to avoid demographic bias and focus strictly on academic predictors.
 
-⚙️ How the Project Works
+⚙️ How the Project Works <br>
 🔹 1. Data Preprocessing (src/data_preprocessing.py)
 Loads CSV dataset
 Drops irrelevant features
